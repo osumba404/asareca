@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASARECA – Transforming Agriculture For Improved Livelihoods</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Reset and Variables */
+        :root {
+            --primary: #028736;
+            --primary-dark: #016428;
+            --secondary: #f17a20;
+            --accent: #2baab1;
+            --dark: #212529;
+            --light: #ffffff;
+            --gray-light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-dark: #343a40;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --section-padding: 80px 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: #e06a15;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--dark);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            max-width: 700px;
+        }
+
+        /* Header Styles */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background: var(--primary);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-top-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-top-links a {
+            transition: var(--transition);
+        }
+
+        .header-top-links a:hover {
+            color: var(--secondary);
+        }
+
+        .header-main {
+            padding: 15px 0;
+        }
+
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            padding: 10px 0;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            padding: 12px 20px;
+            border-bottom: 1px solid #eee;
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: var(--gray-light);
+            color: var(--primary);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://www.asareca.org/wp-content/uploads/2025/09/1-2.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 120px;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: var(--section-padding);
+            background: var(--gray-light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-video {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Mission Vision Section */
+        .mission-vision {
+            padding: var(--section-padding);
+        }
+
+        .mv-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .mv-card {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .mv-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mv-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .mv-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Stories Section */
+        .stories {
+            padding: var(--section-padding);
+            background: var(--gray-light);
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .story-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .story-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .story-card:hover .story-img img {
+            transform: scale(1.05);
+        }
+
+        .story-content {
+            padding: 25px;
+        }
+
+        .story-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .story-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        /* Publications Section */
+        .publications {
+            padding: var(--section-padding);
+        }
+
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .pub-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            display: flex;
+            transition: var(--transition);
+        }
+
+        .pub-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pub-icon {
+            width: 80px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .pub-content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .pub-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .pub-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+
+        /* Video Section */
+        .videos {
+            padding: var(--section-padding);
+            background: var(--gray-light);
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-thumb {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .video-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .video-card:hover .play-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        .video-content {
+            padding: 20px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: var(--section-padding);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            background: #1a1a1a;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .mv-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stories-grid,
+            .publications-grid,
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-links">
+                    <a href="https://www.asareca.org/opportunities/"><i class="fas fa-briefcase"></i> Opportunities</a>
+                    <a href="http://khub.asareca.org/"><i class="fas fa-graduation-cap"></i> Knowledge Hub</a>
+                </div>
+                <div class="language-selector">
+                    <select>
+                        <option value="en">English</option>
+                        <option value="fr">French</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <img src="https://www.asareca.org/wp-content/uploads/2023/07/ASARECA_LOGO.png" alt="ASARECA Logo">
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">About <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-item">About ASARECA</a>
+                                <a href="#" class="dropdown-item">Our Partners</a>
+                                <a href="#" class="dropdown-item">Contact Us</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Our People <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-item">Council of Patron Ministers</a>
+                                <a href="#" class="dropdown-item">General Assembly</a>
+                                <a href="#" class="dropdown-item">Board of Directors</a>
+                                <a href="#" class="dropdown-item">Secretariat Staff</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Interventions <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-item">Projects</a>
+                                <a href="#" class="dropdown-item">Partnerships</a>
+                                <a href="#" class="dropdown-item">Policy & Markets</a>
+                                <a href="#" class="dropdown-item">Knowledge Management</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link">Countries</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Statistics</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Media</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Publications</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Transforming Agriculture For Improved Livelihoods</h1>
+            <p>ASARECA is a not-for-profit Inter-Governmental Organization working to strengthen agricultural research in Eastern and Central Africa.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Our Agenda</h2>
+                    <p>The Association for Strengthening Agricultural Research in Eastern and Central Africa (ASARECA) is a not-for-profit Inter-Governmental Organization created in 1994 and owned by the National Agricultural Research Institutes (NARIs) of 15 member States in Eastern and Central Africa (ECA).</p>
+                    <p>Our overarching mandate is to Transform Agriculture for Improved Livelihoods, Sustained Economic Growth, and Inclusive Development in ECA in alignment with SDGs.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+                <div class="about-video">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <iframe src="https://www.youtube.com/embed/BJg26xa1SOY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mv-cards">
+                <div class="mv-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To Contribute to Increased Productivity, Commercialization and Competitiveness of the ECA Agricultural Sector Through Strengthening, Catalyzing and Coordinating Agricultural Research for Development in the ECA Sub Region.</p>
+                </div>
+                <div class="mv-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>A transformed ECA Agricultural Sector Supporting Improved Livelihoods, Sustained Economic Growth and Inclusive Development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Stories Section -->
+    <section class="stories">
+        <div class="container">
+            <h2 class="section-title">Latest Stories</h2>
+            <p class="section-subtitle">Stay updated with our latest news and success stories from across Eastern and Central Africa.</p>
+            
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-img">
+                        <img src="https://www.asareca.org/wp-content/uploads/2025/09/1-2-640x480.jpg" alt="Uganda's Climate-Smart Agriculture">
+                    </div>
+                    <div class="story-content">
+                        <div class="story-date">September 26, 2025</div>
+                        <h3 class="story-title">Uganda's Climate-Smart Agriculture Platform Charts Path to Resilience</h3>
+                        <a href="#" class="btn btn-secondary">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-img">
+                        <img src="https://www.asareca.org/wp-content/uploads/2025/09/2-640x480.jpg" alt="Goat Productivity">
+                    </div>
+                    <div class="story-content">
+                        <div class="story-date">September 9, 2025</div>
+                        <h3 class="story-title">ASARECA, ICARDA, ILRI, NARO move to boost goat productivity via community breeding</h3>
+                        <a href="#" class="btn btn-secondary">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-img">
+                        <img src="https://www.asareca.org/wp-content/uploads/2025/08/IMG_2905-640x480.jpg" alt="Climate-Smart Agriculture Training">
+                    </div>
+                    <div class="story-content">
+                        <div class="story-date">August 5, 2025</div>
+                        <h3 class="story-title">Regional Trainers Empowered to Champion Climate-Smart Agriculture through Agroecology</h3>
+                        <a href="#" class="btn btn-secondary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="#" class="btn">View All Stories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="publications">
+        <div class="container">
+            <h2 class="section-title">Latest Publications</h2>
+            <p class="section-subtitle">Access our research findings, reports, and policy documents.</p>
+            
+            <div class="publications-grid">
+                <div class="pub-card">
+                    <div class="pub-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">Medium Term Operational Plan 1 Achievements</h3>
+                        <div class="pub-meta">
+                            <span>34.54 MB</span>
+                            <span>908 downloads</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pub-card">
+                    <div class="pub-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">Annual Corporate Report 2022</h3>
+                        <div class="pub-meta">
+                            <span>32.12 MB</span>
+                            <span>1409 downloads</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pub-card">
+                    <div class="pub-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">ASARECA @25 Celebrating Decades</h3>
+                        <div class="pub-meta">
+                            <span>7.76 MB</span>
+                            <span>868 downloads</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="#" class="btn">View All Publications</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="videos">
+        <div class="container">
+            <h2 class="section-title">Video Highlights</h2>
+            <p class="section-subtitle">Watch our latest videos showcasing agricultural innovations and success stories.</p>
+            
+            <div class="videos-grid">
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/nXzWRoMUsqg/maxresdefault.jpg" alt="AIRTEA Project Success">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3>AIRTEA Project Success: Knowledge Transfer in Uganda</h3>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/c4XHuipe97o/maxresdefault.jpg" alt="Farmer Success Story">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3>Elizabeth Maleka: Farmer Success Story from Kenya</h3>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/OOWzhgDgi8E/maxresdefault.jpg" alt="ASARECA Conference">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3>ASARECA Ministerial and Scientific Conference 2023</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="#" class="btn">View More Videos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery Highlight</h2>
+            <p class="section-subtitle">Visual stories from our projects and events across Eastern and Central Africa.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://live.staticflickr.com/65535/52975131902_170863e96d_q.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://live.staticflickr.com/65535/54339161206_c006a0dd39_q.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://live.staticflickr.com/65535/52975732846_b939a52022_q.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://live.staticflickr.com/65535/52976105125_959f8c21c4_q.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://live.staticflickr.com/65535/52975728806_59b51900c2_q.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://live.staticflickr.com/65535/52975880854_f8c8d7cf13_q.jpg" alt="Gallery Image">
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="#" class="btn">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Who We Are</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Secretariat</a></li>
+                        <li><a href="#">Customer Service Charter</a></li>
+                        <li><a href="#">KHUB</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Reach Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Complaints</a></li>
+                        <li><a href="#">Report</a></li>
+                        <li><a href="#">Policies and Reports</a></li>
+                        <li><a href="#">ASARECA Organogram</a></li>
+                        <li><a href="#">Others</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Whistle Blowing</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Risk Management</a></li>
+                        <li><a href="#">Policy Documents</a></li>
+                        <li><a href="#">Stakeholders</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> ASARECA Secretariat<br>Plot 5 Mpigi Road<br>P.O.Box 765 Entebbe, Uganda</p>
+                        <p><i class="fas fa-phone"></i> Tel: 256 414698259</p>
+                        <p><i class="fas fa-envelope"></i> Email: secretariat@asareca.org</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-flickr"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 | ASARECA. Copyright. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Simple smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
